@@ -1,0 +1,20 @@
+menu "Example Configuration"
+
+    config EXAMPLE_WIFI_CONNECTION_MAXIMUM_RETRY
+        int "WiFi connection maximum retry"
+        range 0 255
+        default 2
+        help
+            WiFi connection maximum retry, from 0 to 255.
+
+    config BROKER_URL
+        string "Broker URL"
+        default "mqtt://mqtt.eclipseprojects.io"
+        help
+            URL of the broker to connect to
+
+    config BROKER_URL_FROM_STDIN
+        bool
+        default y if BROKER_URL = "FROM_STDIN"
+
+endmenu
